@@ -10,7 +10,6 @@ import (
 
 func main() {
 	contents, _ := ioutil.ReadFile("6.txt")
-	spew.Dump(contents)
 	ciphertext := make([]byte, base64.StdEncoding.DecodedLen(len(contents)))
 	base64.StdEncoding.Decode(ciphertext, contents)
 	ks := findKeySize(ciphertext)
